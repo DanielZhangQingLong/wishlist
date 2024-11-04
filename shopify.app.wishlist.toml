@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "44a184e72eb66e5bfda963022cf29028"
+name = "wishlist"
+handle = "wishlist-598"
+application_url = "https://earrings-honor-she-fares.trycloudflare.com"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+dev_store_url = "danielzhangdev.myshopify.com"
+automatically_update_urls_on_dev = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = ""
+
+[auth]
+redirect_urls = [
+  "https://earrings-honor-she-fares.trycloudflare.com/auth/callback",
+  "https://earrings-honor-she-fares.trycloudflare.com/auth/shopify/callback",
+  "https://earrings-honor-she-fares.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+[pos]
+embedded = false
