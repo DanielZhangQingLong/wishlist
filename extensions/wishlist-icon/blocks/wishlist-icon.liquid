@@ -1,0 +1,68 @@
+<div class="wishlist-inppire__icon" x-data="wishlist">
+  <button type="button" @click="addToWishlist">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 25 25"
+      width="25"
+      height="25"
+      stroke-width="2"
+      stroke="#000"
+      :fill="wishlisted ? '#000' : '#fff' "
+    >
+      <path d="M12.5 7.5 L10 5 A2.5 2.5 0 0 0 5 10 L12.5 17.5 L20 10 A2.5 2.5 0 0 0 15 5 Z"  />
+    </svg>
+    {% if block.settings.text != blank %}
+      <span class="wishlist-inspire__icon--text">{{ block.settings.text }}</span>
+    {% endif %}
+  </button>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('wishlist', () => ({
+      wishlisted: false,
+      appUrl: "https://bird-album-launches-cork.trycloudflare.com",
+      addToWishlist() {
+        this.wishlisted = !this.wishlisted;
+        // If customer not loginned in, show an alert to login.
+        {%  unless  customer %}
+          alert('Please login to add to wishlist.')
+          return
+        {% endunless %}
+        // TODO: send data to DB
+      },
+    }));
+  });
+</script>
+
+<style>
+  .wishlist-inspire__icon {
+    margin: 0;
+    padding: 0;
+    max-width: 44rem;
+  }
+
+  .wishlist-inspire__icon button {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+</style>
+{% schema %}
+{
+  "name": "Wishlist icon",
+  "target": "section",
+  "settings": [
+    { "type": "product", "id": "product", "label": "product", "autofill": true },
+    { "type": "text", "id": "text", "label": "Icon", "default": "Add the product your wishlist" },
+    { "type": "color", "id": "colour", "label": "Color", "default": "#fff" }
+  ]
+}
+{% endschema %}
