@@ -3,7 +3,7 @@
 client_id = "44a184e72eb66e5bfda963022cf29028"
 name = "wishlist"
 handle = "wishlist-598"
-application_url = "https://slovenia-guidance-clinics-rentals.trycloudflare.com"
+application_url = "https://heater-mud-ds-travels.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = ""
 
 [auth]
 redirect_urls = [
-  "https://slovenia-guidance-clinics-rentals.trycloudflare.com/auth/callback",
-  "https://slovenia-guidance-clinics-rentals.trycloudflare.com/auth/shopify/callback",
-  "https://slovenia-guidance-clinics-rentals.trycloudflare.com/api/auth/callback"
+  "https://heater-mud-ds-travels.trycloudflare.com/auth/callback",
+  "https://heater-mud-ds-travels.trycloudflare.com/auth/shopify/callback",
+  "https://heater-mud-ds-travels.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

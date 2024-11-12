@@ -29,6 +29,7 @@ export async function action({ request }) {
         method: "POST",
         wishlist,
       });
+      return cors(request, response);
 
     default:
       break;
